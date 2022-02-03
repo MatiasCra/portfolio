@@ -16,7 +16,7 @@ const Projects = () => {
           !entry.target.classList.contains(projectsStyles.slide)
         ) {
           if (
-            parseInt(entry.target.id.replace("project", "")) % 2 === 0 ||
+            parseInt(entry.target.id.replace("project", "")) % 2 !== 0 ||
             window.screen.width <= 992
           ) {
             entry.target.classList.add(projectsStyles.slideDelay1);
