@@ -6,38 +6,33 @@ const Contact = () => {
     <div className={contactStyles.background} id="contact">
       <div className={contactStyles.container} id="contact">
         <h1 className={contactStyles.title}>Contact Me</h1>
-        <from className={contactStyles.form}>
+        <form className={contactStyles.form}>
           <div className={contactStyles.formSection}>
             <div>
-              <label for="name">
+              <label>
                 Name<span className={contactStyles.required}>*</span>
-                <input type="text" id="name" />
+                <input type="text" />
               </label>
             </div>
             <div>
-              <label for="email">
+              <label>
                 Email<span className={contactStyles.required}>*</span>
-                <input type="email" id="email" />
+                <input type="email" />
               </label>
             </div>
           </div>
 
-          <label for="subject">
+          <label>
             Subject<span className={contactStyles.required}>*</span>
-            <input
-              type="text"
-              className={contactStyles.fullWidth}
-              id="subject"
-            />
+            <input type="text" className={contactStyles.fullWidth} />
           </label>
 
-          <label for="message">
+          <label>
             Message<span className={contactStyles.required}>*</span>
             <textarea
               rows="10"
               columns="50"
               className={contactStyles.fullWidth}
-              id="message"
             ></textarea>
           </label>
 
@@ -49,7 +44,7 @@ const Contact = () => {
           >
             Send Message
           </button>
-        </from>
+        </form>
       </div>
     </div>
   );

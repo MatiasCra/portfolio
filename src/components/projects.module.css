@@ -49,7 +49,6 @@
   animation-name: fadeIn;
   animation-duration: 400ms;
   animation-timing-function: ease;
-  visibility: visible !important;
   animation-fill-mode: forwards;
 }
 
