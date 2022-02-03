@@ -23,7 +23,7 @@ const ProjectCard = (props) => {
       onClick={openProject}
     >
         <div className={cardStyles.overlay}>
-          <h3 className={cardStyles.title}>Title</h3>
+          <h3 className={cardStyles.title}>{props.title}</h3>
         </div>
     </div>
   );

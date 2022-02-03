@@ -16,7 +16,7 @@ const Project = () => {
       overlay.classList.toggle(projectStyles.close);
       container.classList.toggle(projectStyles.close);
       sleep(700).then(() => {
-        navigate("/#0")
+        navigate("/#project1")
       })
     });
   };

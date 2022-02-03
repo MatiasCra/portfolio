@@ -20,10 +20,12 @@
 .title button {
   color: inherit;
   text-decoration: none;
+  transition: color 300ms ease;
 }
 
 .title button:hover {
   cursor: pointer;
+  color: var(--color-green);
 }
 
 .links-list {

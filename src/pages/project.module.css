@@ -72,12 +72,16 @@
   height: 2.5rem;
   top: 2.5rem;
   right: 2.1rem;
-  opacity: .8;
   z-index: 99;
 }
 
-.close-menu:hover {
+.close-menu svg {
+  transition: fill 300ms ease;
+}
+
+.close-menu:hover svg {
   cursor: pointer;
+  fill: var(--color-red);
 }
 
 .close-menu * {

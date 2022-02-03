@@ -2,6 +2,7 @@ import React from "react";
 import * as projectsStyles from "./projects.module.css";
 import ProjectCard from "./projectCard";
 import image from "../images/projects/DjangoBlog.png";
+import projects from "../projects";
 
 const Projects = () => {
   React.useEffect(() => {
@@ -15,13 +16,11 @@ const Projects = () => {
           !entry.target.classList.contains(projectsStyles.slide)
         ) {
           if (
-            parseInt(entry.target.id) % 2 === 0 ||
+            parseInt(entry.target.id.replace("project", "")) % 2 === 0 ||
             window.screen.width <= 992
           ) {
-            console.log("delay 1");
             entry.target.classList.add(projectsStyles.slideDelay1);
           } else {
-            console.log("delay 2");
             entry.target.classList.add(projectsStyles.slideDelay2);
           }
           entry.target.classList.add(projectsStyles.slide);
@@ -39,8 +38,8 @@ const Projects = () => {
     <div className={projectsStyles.container} id="projects">
       <h2 className={projectsStyles.title}>Projects</h2>
       <div className={projectsStyles.projectsGrid} id="projectsGrid">
-        {[...Array(6)].map((_, i) => {
-          return <ProjectCard key={i} id={i} image={image} />;
+        {projects.map((project, i) => {
+          return <ProjectCard key={i} id={project.id} title={project.title} image={image} />;
         })}
       </div>
     </div>
