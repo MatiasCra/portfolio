@@ -12,7 +12,17 @@
 }
 
 .closeContainer.close {
-  background-color: var(--fg);
+  background-color: transparent;
+  animation: backgroundOn 700ms ease forwards;
+}
+
+@keyframes backgroundOn {
+  0%{
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--bg);
+  }  
 }
 
 .overlay {

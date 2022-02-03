@@ -11,8 +11,14 @@ const ProjectCard = (props) => {
     const opener = document.getElementById("project-opener")
     opener.classList.toggle("open-project")
     sleep(1000).then(() => {
-      navigate("/project")
+      navigate("/project/" + props.slug)
     })
+  }
+
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      openProject();
+    }
   }
 
   return (
@@ -21,6 +27,9 @@ const ProjectCard = (props) => {
       className={cardStyles.card}
       style={{ "backgroundImage": `url(${props.image})` }}
       onClick={openProject}
+      role="button"
+      tabIndex="0"
+      onKeyPress={handleKeyPress}
     >
         <div className={cardStyles.overlay}>
           <h3 className={cardStyles.title}>{props.title}</h3>

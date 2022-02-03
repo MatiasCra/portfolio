@@ -3,7 +3,7 @@ import * as navbarStyles from "./navbar.module.css";
 import NavLink from "./navlink";
 import Hamburger from "../images/Hamburger_icon.svg";
 import Close from "../images/close.svg";
-import { navigate } from "gatsby";
+// import { navigate } from "gatsby";
 
 const Navbar = () => {
   const toggleSideLinks = (e) => {
@@ -75,7 +75,7 @@ const Navbar = () => {
           onClick={(e) => {
             e.preventDefault();
             toggleSideLinks();
-            scrollTo("start");
+            scrollTo("contact");
           }}
         >
           Contact

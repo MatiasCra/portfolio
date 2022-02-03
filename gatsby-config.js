@@ -20,7 +20,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Noto Sans", "Roboto"],
+          families: ["Noto Sans", "Roboto", "Robot Mono", "Ubuntu"],
         },
       },
     },

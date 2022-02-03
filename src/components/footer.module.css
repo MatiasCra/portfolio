@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mediaIcons > a {
+  margin-inline: 2%;
+}
+
+.mediaIcons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer > span {
+  margin-top: 1.5rem;
+  font-size: 1.2em;
+  font-family: "Roboto";
+  opacity: .7;
+}

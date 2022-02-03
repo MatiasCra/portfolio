@@ -1,0 +1,136 @@
+.background {
+  background-color: var(--bg);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.container {
+  width: 50%;
+  margin-inline: auto;
+  padding-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    width: 70%;
+    transform: translateX(-.5rem);
+  }
+
+  .formSection {
+    flex-direction: column !important;
+  }
+
+  .formSection > div {
+    width: 100% !important;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: var(--color-purple);
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto";
+  font-variant: mono;
+}
+
+.form label {
+  font-family: "Ubuntu";
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  width: 100%;
+  display: block;
+  color: var(--fg);
+  margin-top: .6rem;
+}
+
+.form input, .form textarea {
+  -webkit-appearance: none;
+  display: block;
+  height: 2rem;
+  font-size: 1.3rem;
+  margin: .5rem 0;
+  border-radius: .3rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Ubuntu";
+
+  outline: none;
+  box-shadow: none;
+  border: 1px solid var(--fg);
+  transition: all 300ms ease;
+}
+
+.form input:focus, .form textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: none;
+  box-shadow: 0 0 0 2px var(--fg);
+}
+
+.form input{
+  padding: .2rem .4rem;
+  padding-right: 0;
+}
+
+.form textarea {
+  height: 10em;
+  padding: .5rem .4rem;
+  padding-right: 0;
+}
+
+.send {
+  -webkit-appearance: none;
+  background-color: var(--color-cyan-darker);
+  padding: .8rem 1.6rem;
+  border-radius: 4rem;
+  font-size: 1.2rem;
+  margin-top: .8rem;
+  font-weight: bold;
+  font-family: "Roboto";
+  border: none;
+  box-sizing: border-box;
+  transition: all 200ms ease-out;
+  border: var(--color-cyan-darker) .15rem solid;
+}
+
+.send:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+  background-color: transparent;
+  color: var(--color-cyan-darker);
+}
+
+.formSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.formSection div{
+  width: 48%;
+}
+
+.formSection input {
+  width: 100%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.required {
+  margin-left: 4px;
+  color: var(--color-yellow);
+}

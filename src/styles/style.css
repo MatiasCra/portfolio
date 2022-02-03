@@ -1,12 +1,20 @@
 :root {
   --bg: rgb(21, 22, 31);
+  --bg-lighter: rgb(29, 30, 36);
+  --bg-light: rgb(80, 82, 92);
   --fg: rgb(219, 219, 240);
+  --fg-darker: rgb(211, 211, 230);
+  --fg-dark: rgb(186, 186, 212);
+  --fg-darkest: rgb(173, 173, 196);
+
   --color-red: rgb(247, 118, 142);
   --color-green: rgb(115, 218, 202);
   --color-yellow: rgb(224, 175, 104);
   --color-blue: rgb(122, 162, 247);
   --color-purple: rgb(187, 154, 247);
   --color-cyan: rgb(125, 207, 255);
+  --color-cyan-darker: rgb(113, 189, 233);
+
 }
 
 /* 

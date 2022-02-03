@@ -3,7 +3,7 @@ import * as projectStyles from "./project.module.css";
 import Close from "../images/close.svg";
 import { navigate } from "gatsby";
 
-const Project = () => {
+const Project = (props) => {
   const closeProject = () => {
     function sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
@@ -16,7 +16,8 @@ const Project = () => {
       overlay.classList.toggle(projectStyles.close);
       container.classList.toggle(projectStyles.close);
       sleep(700).then(() => {
-        navigate("/#project1")
+        // navigate("/#" + props.pageContext.project.id)
+        navigate("/#projects")
       })
     });
   };
@@ -27,7 +28,7 @@ const Project = () => {
       <button className={projectStyles.closeMenu} onClick={closeProject}>
         <Close />
       </button>
-      <h1 className={projectStyles.title}>TITLE</h1>
+      <h1 className={projectStyles.title}>{props.pageContext.project.title}</h1>
       <p style={{ fontSize: "1.3rem", width: "90%", marginInline: "auto" }}>
         Mollit Lorem fugiat consequat ad exercitation do mollit. Nulla labore
         nostrud id consequat. Ullamco fugiat amet consequat ad veniam ullamco
