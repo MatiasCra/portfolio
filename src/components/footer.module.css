@@ -11,9 +11,18 @@
   margin-inline: 2%;
 }
 
+.mediaIcons > a > svg {
+  transition: fill 300ms ease;
+}
+
+.mediaIcons > a:hover > svg {
+  fill: var(--color-green);
+}
+
 .mediaIcons {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
