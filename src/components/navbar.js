@@ -13,12 +13,34 @@ const Navbar = () => {
       .classList.toggle(navbarStyles.moveRight);
   };
 
+  const closeSideLinks = (e) => {
+    const navLinks = document.getElementById("navLinks")
+    if(navLinks.classList.contains(navbarStyles.show)){
+      navLinks.classList.remove(navbarStyles.show)
+      document
+        .getElementById("hamburgerBtn")
+        .classList.remove(navbarStyles.moveRight);
+    }
+  }
+
+  const scrollTo = (elementId) => {
+    document.getElementById(elementId).scrollIntoView({ behavior: "smooth" });
+    window.history.pushState({}, "", "#" + elementId);
+  };
+
+  const scrollToTop = () => {
+    document.getElementById("start").scrollIntoView({ behavior: "smooth" });
+    window.history.pushState({}, "", "/");
+  }
+
   return (
     <nav className={navbarStyles.navbar}>
       <div className={navbarStyles.title}>
         <button
-          onClick={() => {
-            window.scrollTo(0, 0);
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToTop();
+            closeSideLinks();
           }}
         >
           Matias Cravchik
@@ -32,17 +54,30 @@ const Navbar = () => {
           href="/"
           onClick={(e) => {
             e.preventDefault();
-            navigate("/");
-            window.scrollTo(0, 0);
+            scrollToTop();
             toggleSideLinks();
           }}
         >
           About
         </NavLink>
-        <NavLink href="#projects" onClick={toggleSideLinks}>
+        <NavLink
+          href="#projects"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleSideLinks();
+            scrollTo("projects");
+          }}
+        >
           Projects
         </NavLink>
-        <NavLink href="#start" onClick={toggleSideLinks}>
+        <NavLink
+          href="#start"
+          onClick={(e) => {
+            e.preventDefault();
+            toggleSideLinks();
+            scrollTo("start");
+          }}
+        >
           Contact
         </NavLink>
       </ul>

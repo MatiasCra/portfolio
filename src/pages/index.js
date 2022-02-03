@@ -7,6 +7,7 @@ const IndexPage = () => {
     <>
       <Layout>
         <Projects />
+        <div id="project-opener" className="opener"></div>
       </Layout>
     </>
   );

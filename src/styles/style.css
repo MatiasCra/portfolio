@@ -17,16 +17,33 @@ Breakpoints:
     --xl: 1200;
 */
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: var(--fg);
 }
 
 svg {
   fill: var(--fg);
+  position: relative;
+}
+
+.opener {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  background-color: var(--fg);
+  transition: all 800ms ease;
+}
+
+.open-project {
+  background-color: var(--bg);
+  height: 100vh;
 }

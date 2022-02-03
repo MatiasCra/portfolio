@@ -6,7 +6,7 @@ import About from "../components/about";
 
 const Layout = (props) => {
   return (
-    <div className={layoutStyles.container}>
+    <div className={layoutStyles.container} id="start">
       <div className={layoutStyles.fullPage}>
         <Navbar />
         <About />
