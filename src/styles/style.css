@@ -1,0 +1,32 @@
+:root {
+  --bg: rgb(21, 22, 31);
+  --fg: rgb(219, 219, 240);
+  --color-red: rgb(247, 118, 142);
+  --color-green: rgb(115, 218, 202);
+  --color-yellow: rgb(224, 175, 104);
+  --color-blue: rgb(122, 162, 247);
+  --color-purple: rgb(187, 154, 247);
+  --color-cyan: rgb(125, 207, 255);
+}
+
+/* 
+Breakpoints:
+    --sm: 576;
+    --md: 768;
+    --lg: 992;
+    --xl: 1200;
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+svg {
+  fill: var(--fg);
+}

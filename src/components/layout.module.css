@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--fg);
+  overflow: hidden;
+}
+
+.fullPage {
+  min-height: 100vh;
+}
+
+.content {
+  align-self: center;
+  flex-grow: 1;
+  width: 100%;
+}
