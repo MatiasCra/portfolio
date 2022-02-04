@@ -17,8 +17,8 @@ const Project = (props) => {
       container.classList.toggle(projectStyles.close);
       sleep(700).then(() => {
         // navigate("/#" + props.pageContext.project.id)
-        navigate("/#projects")
-      })
+        navigate("/#projects");
+      });
     });
   };
 

@@ -6,6 +6,7 @@
   align-items: center;
   width: 80%;
   min-height: 70vh;
+  margin-top: calc(var(--nav-padding-y) * 3);
 }
 
 .avatar {

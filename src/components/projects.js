@@ -39,7 +39,15 @@ const Projects = () => {
       <h2 className={projectsStyles.title}>Projects</h2>
       <div className={projectsStyles.projectsGrid} id="projectsGrid">
         {projects().map((project, i) => {
-          return <ProjectCard key={i} id={project.id} title={project.title} image={image} slug={project.slug} />;
+          return (
+            <ProjectCard
+              key={i}
+              id={project.id}
+              title={project.title}
+              image={image}
+              slug={project.slug}
+            />
+          );
         })}
       </div>
     </div>

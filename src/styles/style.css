@@ -14,7 +14,6 @@
   --color-purple: rgb(187, 154, 247);
   --color-cyan: rgb(125, 207, 255);
   --color-cyan-darker: rgb(113, 189, 233);
-
 }
 
 /* 
@@ -49,6 +48,7 @@ svg {
   height: 0;
   background-color: var(--fg);
   transition: all 800ms ease;
+  z-index: 99999;
 }
 
 .open-project {

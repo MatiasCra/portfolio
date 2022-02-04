@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background-color: var(--bg);
   color: var(--fg);
@@ -27,14 +27,14 @@
 
 .overlay {
   width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .overlay.close {
   width: 100vw;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: var(--bg);
   animation: slideOut 800ms ease forwards !important;
 }
@@ -75,7 +75,7 @@
 }
 
 .close-menu {
-  position: fixed;
+  position: absolute;
   background-color: transparent;
   border: none;
   width: 2.5rem;

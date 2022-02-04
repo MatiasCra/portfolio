@@ -1,4 +1,7 @@
 .container {
+  --nav-padding-x: 10%;
+  --nav-padding-y: 3rem;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -9,7 +12,13 @@
   overflow: hidden;
 }
 
-.fullPage {
+@media (max-width: 992px) {
+  .container {
+    --nav-padding-x: 5%; 
+  }
+}
+
+.full-page {
   min-height: 100vh;
 }
 

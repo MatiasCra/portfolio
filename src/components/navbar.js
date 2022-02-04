@@ -14,27 +14,31 @@ const Navbar = () => {
   };
 
   const closeSideLinks = (e) => {
-    const navLinks = document.getElementById("navLinks")
-    if(navLinks.classList.contains(navbarStyles.show)){
-      navLinks.classList.remove(navbarStyles.show)
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks.classList.contains(navbarStyles.show)) {
+      navLinks.classList.remove(navbarStyles.show);
       document
         .getElementById("hamburgerBtn")
         .classList.remove(navbarStyles.moveRight);
     }
-  }
+  };
 
   const scrollTo = (elementId) => {
     document.getElementById(elementId).scrollIntoView({ behavior: "smooth" });
     window.history.pushState({}, "", "#" + elementId);
+    document.getElementById("navbar").classList.remove(navbarStyles.showNav);
   };
 
   const scrollToTop = () => {
     document.getElementById("start").scrollIntoView({ behavior: "smooth" });
     window.history.pushState({}, "", "/");
-  }
+  };
 
   return (
-    <nav className={navbarStyles.navbar}>
+    <nav
+      className={navbarStyles.navbar + " " + navbarStyles.showNav}
+      id="navbar"
+    >
       <div className={navbarStyles.title}>
         <button
           onClick={(e) => {
