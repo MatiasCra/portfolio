@@ -12,6 +12,14 @@
   overflow: hidden;
 }
 
+@media (max-width: 576px) {
+  .container {
+    padding-top: 2rem;
+    --nav-padding-y: 1.5rem
+  }
+}
+
+
 @media (max-width: 992px) {
   .container {
     --nav-padding-x: 5%; 

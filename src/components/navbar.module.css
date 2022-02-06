@@ -175,4 +175,17 @@
   .links-list {
     width: 100vw;
   }
+
+  .title button {
+    text-align: start !important;
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    transform: translateY(calc(-1 * (var(--nav-padding-y) * 4)));
+  }
+
+  .navbar:not(.showNav) ul.show {
+    transform: translateY(calc(var(--nav-padding-y) * 4)) !important;
+  }
 }

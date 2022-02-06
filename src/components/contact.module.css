@@ -20,10 +20,11 @@
     width: 80%;
   }
 }
+
 @media (max-width: 576px) {
   .container {
-    width: 70%;
-    transform: translateX(-.5rem);
+    width: 85%;
+    transform: translateX(-.3rem);
   }
 
   .formSection {

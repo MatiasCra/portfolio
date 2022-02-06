@@ -51,7 +51,20 @@ svg {
   z-index: 99999;
 }
 
-.open-project {
+.opener.open-project {
   background-color: var(--bg);
   height: 100vh;
+}
+
+#start.open-project *:not(.opener) {
+  animation: fadeOut 800ms ease;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

@@ -10,6 +10,7 @@ const ProjectCard = (props) => {
 
     const opener = document.getElementById("project-opener")
     opener.classList.toggle("open-project")
+    document.getElementById("start").classList.toggle("open-project")
     sleep(1000).then(() => {
       navigate("/project/" + props.slug)
     })

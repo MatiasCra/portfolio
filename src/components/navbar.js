@@ -59,7 +59,7 @@ const Navbar = () => {
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
-            toggleSideLinks();
+            closeSideLinks();
           }}
         >
           About

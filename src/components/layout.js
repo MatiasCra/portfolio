@@ -12,28 +12,39 @@ const Layout = (props) => {
   React.useEffect(() => {
     function handleScroll(event) {
       const scrollAmmount = 250;
-      if ((lastScroll - window.scrollY) > scrollAmmount || window.scrollY < scrollAmmount) {
+      if (
+        lastScroll - window.scrollY > scrollAmmount ||
+        window.scrollY < scrollAmmount
+      ) {
         setLastScroll(window.scrollY);
         if (!showNav) {
           setShowNav(true);
           document.getElementById("navbar").classList.add(navbarStyles.showNav);
         }
-      } else {
-        if (window.scrollY > lastScroll) {
-          setLastScroll(window.scrollY);
-          setShowNav(false);
-          if (
-            !document
-              .getElementById("navLinks")
-              .classList.contains(navbarStyles.show)
-          ) {
-            document
-              .getElementById("navbar")
-              .classList.remove(navbarStyles.showNav);
-          }
+      } else if (window.scrollY > lastScroll) {
+        setLastScroll(window.scrollY);
+        setShowNav(false);
+        if (
+          !document
+            .getElementById("navLinks")
+            .classList.contains(navbarStyles.show)
+        ) {
+          document
+            .getElementById("navbar")
+            .classList.remove(navbarStyles.showNav);
+        } else if (window.innerWidth > 992) {
+          // Close the side links if width changed to lg so the navbar scroll 
+          // works properly
+          document
+            .getElementById("navLinks")
+            .classList.remove(navbarStyles.show);
+          document
+            .getElementById("navbar")
+            .classList.remove(navbarStyles.showNav);
         }
       }
     }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [showNav, lastScroll]);

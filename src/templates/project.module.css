@@ -11,10 +11,10 @@
   animation: slideUp 500ms ease;
 }
 
-.closeContainer.close {
+/* .closeContainer.close {
   background-color: transparent;
   animation: backgroundOn 700ms ease forwards;
-}
+} */
 
 @keyframes backgroundOn {
   0%{
@@ -52,6 +52,7 @@
   100% {
     opacity: 0;
     transform: translateY(100%);
+    background-color: var(--fg);
   }  
 }
 
