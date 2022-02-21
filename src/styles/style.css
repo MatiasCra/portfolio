@@ -42,18 +42,24 @@ svg {
 
 .opener {
   position: fixed;
-  bottom: 0;
+  top: 15vh;
   left: 0;
   width: 100vw;
-  height: 0;
-  background-color: var(--fg);
-  transition: all 800ms ease;
+  height: 85vh;
+  /* background-color: var(--fg); */
+  transition: transform 1200ms ease, opacity 800ms ease,
+    background-color 800ms ease, top 800ms ease;
+  opacity: 0;
   z-index: 99999;
+  visibility: hidden;
 }
 
 .opener.open-project {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
   background-color: var(--bg);
-  height: 100vh;
+  transform: scale(2);
 }
 
 #start.open-project *:not(.opener) {

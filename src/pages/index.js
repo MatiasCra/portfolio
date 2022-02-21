@@ -3,10 +3,12 @@ import Contact from "../components/contact";
 import Layout from "../components/layout";
 import Projects from "../components/projects";
 import Footer from "../components/footer";
+import { Helmet } from "react-helmet";
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Helmet title="Matías Cravchik | Portfolio"/>
       <Projects />
       <Contact />
       <Footer />

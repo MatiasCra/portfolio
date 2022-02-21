@@ -1,8 +1,8 @@
 import React from "react";
 import * as projectsStyles from "./projects.module.css";
 import ProjectCard from "./projectCard";
-import image from "../images/projects/DjangoBlog.png";
-import { projects } from "../projects";
+import image from "../images/projects/django-blog/DjangoBlog.png";
+import { projects } from "../projects/projects-list";
 
 const Projects = () => {
   React.useEffect(() => {
