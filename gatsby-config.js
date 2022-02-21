@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `portfolio`,
+    title: `Portfolio`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
@@ -15,6 +15,12 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
     },
     {
       resolve: "gatsby-plugin-web-font-loader",

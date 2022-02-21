@@ -3,7 +3,7 @@ const path = require("path");
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const projectTemplate = path.resolve("./src/templates/project.js");
-  const projects = require("./src/projects").projects();
+  const projects = require("./src/projects/projects-list").projects();
   projects.forEach((project) => {
     createPage({
       component: projectTemplate,
