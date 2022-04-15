@@ -1,10 +1,12 @@
 import Generic from "./Generic";
 
-const projects_components = {
+const projectsComponents = {
   generic: Generic,
 };
 
-const get_project_component = (project_slug) =>
-  projects_components[project_slug];
+const getProjectComponent = (projectSlug) =>
+  projectsComponents[projectSlug]
+    ? projectsComponents[projectSlug]
+    : projectsComponents["generic"];
 
-export default get_project_component;
+export default getProjectComponent;

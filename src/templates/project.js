@@ -3,7 +3,7 @@ import * as projectStyles from "./project.module.css";
 import Close from "../images/close.svg";
 import { navigate } from "gatsby";
 import { Helmet } from "react-helmet";
-import get_project_component from "../projects";
+import getProjectComponent from "../projects";
 
 const Project = (props) => {
   React.useEffect(() => {
@@ -22,7 +22,7 @@ const Project = (props) => {
     });
   };
 
-  Component = get_project_component("generic");
+  Component = getProjectComponent("generic");
 
   return (
     <>
