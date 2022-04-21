@@ -1,9 +1,9 @@
 import * as React from "react";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
-import Projects from "../components/projects";
+// import Projects from "../components/projects";
 import Footer from "../components/footer";
-import { Head } from "next/head";
+import Head from "next/head";
 
 const IndexPage = () => {
   return (
@@ -11,7 +11,7 @@ const IndexPage = () => {
       <Head>
         <title>Matías Cravchik | Portfolio</title>
       </Head>
-      <Projects />
+      {/*<Projects />*/}
       <Contact />
       <Footer />
       <div id="project-opener" className="opener"></div>
