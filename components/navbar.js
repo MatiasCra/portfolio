@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flex flex-row justify-between items-center w-4/5 static mx-auto my-6"
+      className="flex flex-row justify-between items-center mx-auto my-0 py-6 w-full px-[10%] bg-zinc-900 z-50"
       // className={navbarStyles.navbar + " " + navbarStyles.showNav}
       id="navbar"
     >
@@ -51,7 +51,10 @@ const Navbar = () => {
           Matias Cravchik
         </button>
       </div>
-      <ul className="list-none flex flex-row m-0 p-0 text-xlg font-sans uppercase" id="navLinks">
+      <ul
+        className="list-none flex flex-row m-0 p-0 text-xlg font-sans uppercase"
+        id="navLinks"
+      >
         {/* <button
           className=""
           // onClick={toggleSideLinks}

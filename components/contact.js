@@ -3,14 +3,14 @@ import contactStyles from "./contact.module.css";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-8 w-11/12">
-      <div className="w-11/12 lg:w-3/5 mx-auto" id="contact">
+    <div className="min-h-screen flex flex-col items-center justify-center py-8 w-11/12 mx-auto">
+      <div className="w-11/12 lg:w-4/5 xl:w-3/5 mx-auto" id="contact">
         <h1 className="uppercase text-6xl w-full text-center font-mono">
           Contact Me
         </h1>
         <form className="lg:mt-8 mt-3">
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="w-full md:w-5/12 lg:w-1/2">
+          <div className="flex flex-col lg:flex-row justify-between">
+            <div className="w-full lg:w-1/2">
               <label className="flex flex-col lg:flex-row lg:items-center w-full">
                 <div className="lg:inline">
                   Name<span className="ml-1">*</span>
@@ -21,7 +21,7 @@ const Contact = () => {
                 />
               </label>
             </div>
-            <div className="w-full md:w-5/12 lg:w-1/2 lg:text-right">
+            <div className="w-full lg:w-1/2 lg:text-right">
               <label className="flex flex-col lg:flex-row items-start lg:items-center w-full">
                 <div className="lg:inline lg:ml-auto">
                   Email<span className="ml-1">*</span>
@@ -56,7 +56,7 @@ const Contact = () => {
               e.preventDefault();
             }}
             //className={contactStyles.send}
-            className="px-3 py-4 mt-2 rounded-full bg-zinc-300 text-zinc-900 font-bold box-border"
+            className="p-3 mt-2 rounded-full bg-zinc-300 text-zinc-900 font-bold box-border transition-all ease-in-out duration-200 hover:scale-[1.15] hover:bg-transparent hover:text-zinc-300 border-4 border-transparent hover:border-zinc-300"
           >
             Send Message
           </button>

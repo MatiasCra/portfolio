@@ -13,7 +13,6 @@ const IndexPage = () => {
       </Head>
       {/*<Projects />*/}
       <Contact />
-      <Footer />
       <div id="project-opener" className="opener"></div>
     </Layout>
   );
