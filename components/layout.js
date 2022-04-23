@@ -6,62 +6,71 @@ import styles from "./layout.module.css";
 import Footer from "../components/footer";
 
 const Layout = (props) => {
-  const [lastScroll, setLastScroll] = React.useState(0);
-  const [showNav, setShowNav] = React.useState(true);
-  const [navH, setNavH] = React.useState(0);
+  // const [lastScroll, setLastScroll] = React.useState(0);
+  // const [showNav, setShowNav] = React.useState(true);
+  // const [navH, setNavH] = React.useState(0);
+
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    if (!loading) {
+      window.scrollTo({ top: 0 });
+      console.log("scrolling to top");
+    }
+  }, [loading]);
 
   React.useEffect(() => {
     const nav = document.getElementById("navbar");
-    const classes = nav.classList;
     const about = document.getElementById("about");
     about.style.marginTop = `${nav.offsetHeight}px`;
-    about.classList.remove("hidden")
-    classes.add("fixed");
-    classes.add("top-0");
-  });
+    about.classList.remove("hidden");
+    nav.classList.add("fixed");
+    nav.classList.add("top-0");
+    setLoading(false);
+  }, [setLoading]);
 
-  React.useEffect(() => {
-    function handleScroll(event) {
-      const scrollAmmount = 250;
-      const nav = document.getElementById("navbar");
-      const classes = nav.classList;
+  // React.useEffect(() => {
+  //   function handleScroll(event) {
+  //     const scrollAmmount = 250;
+  //     const nav = document.getElementById("navbar");
+  //     const classes = nav.classList;
 
-      // if (
-      //   lastScroll - window.scrollY > scrollAmmount ||
-      //   window.scrollY < scrollAmmount
-      // ) {
-      //   setLastScroll(window.scrollY);
-      //   if (!showNav) {
-      //     setShowNav(true);
-      //     document.getElementById("navbar").classList.add(navbarStyles.showNav);
-      //   }
-      // } else if (window.scrollY > lastScroll) {
-      //   setLastScroll(window.scrollY);
-      //   setShowNav(false);
-      //   if (
-      //     !document
-      //       .getElementById("navLinks")
-      //       .classList.contains(navbarStyles.show)
-      //   ) {
-      //     document
-      //       .getElementById("navbar")
-      //       .classList.remove(navbarStyles.showNav);
-      //   } else if (window.innerWidth > 992) {
-      //     // Close the side links if width changed to lg so the navbar scroll
-      //     // works properly
-      //     document
-      //       .getElementById("navLinks")
-      //       .classList.remove(navbarStyles.show);
-      //     document
-      //       .getElementById("navbar")
-      //       .classList.remove(navbarStyles.showNav);
-      //   }
-      // }
-    }
+  //     // if (
+  //     //   lastScroll - window.scrollY > scrollAmmount ||
+  //     //   window.scrollY < scrollAmmount
+  //     // ) {
+  //     //   setLastScroll(window.scrollY);
+  //     //   if (!showNav) {
+  //     //     setShowNav(true);
+  //     //     document.getElementById("navbar").classList.add(navbarStyles.showNav);
+  //     //   }
+  //     // } else if (window.scrollY > lastScroll) {
+  //     //   setLastScroll(window.scrollY);
+  //     //   setShowNav(false);
+  //     //   if (
+  //     //     !document
+  //     //       .getElementById("navLinks")
+  //     //       .classList.contains(navbarStyles.show)
+  //     //   ) {
+  //     //     document
+  //     //       .getElementById("navbar")
+  //     //       .classList.remove(navbarStyles.showNav);
+  //     //   } else if (window.innerWidth > 992) {
+  //     //     // Close the side links if width changed to lg so the navbar scroll
+  //     //     // works properly
+  //     //     document
+  //     //       .getElementById("navLinks")
+  //     //       .classList.remove(navbarStyles.show);
+  //     //     document
+  //     //       .getElementById("navbar")
+  //     //       .classList.remove(navbarStyles.showNav);
+  //     //   }
+  //     // }
+  //   }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [showNav, lastScroll]);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [showNav, lastScroll]);
 
   return (
     <div
