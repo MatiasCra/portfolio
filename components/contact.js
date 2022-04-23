@@ -1,5 +1,4 @@
 import React from "react";
-import contactStyles from "./contact.module.css";
 
 const Contact = () => {
   return (
@@ -13,7 +12,7 @@ const Contact = () => {
             <div className="w-full lg:w-1/2">
               <label className="flex flex-col lg:flex-row lg:items-center w-full">
                 <div className="lg:inline">
-                  Name<span className="ml-1">*</span>
+                  Name<span className="ml-1 text-[#E0AF68]">*</span>
                 </div>
                 <input
                   type="text"
@@ -24,7 +23,7 @@ const Contact = () => {
             <div className="w-full lg:w-1/2 lg:text-right">
               <label className="flex flex-col lg:flex-row items-start lg:items-center w-full">
                 <div className="lg:inline lg:ml-auto">
-                  Email<span className="ml-1">*</span>
+                  Email<span className="ml-1 text-[#E0AF68]">*</span>
                 </div>
                 <input
                   type="email"
@@ -35,7 +34,7 @@ const Contact = () => {
           </div>
 
           <label className="block mt-2">
-            Subject<span className="ml-1">*</span>
+            Subject<span className="ml-1 text-[#E0AF68]">*</span>
             <input
               type="text"
               className="w-full mt-1 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-all ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
@@ -43,7 +42,7 @@ const Contact = () => {
           </label>
 
           <label className="block mt-2">
-            Message<span className="ml-1">*</span>
+            Message<span className="ml-1 text-[#E0AF68]">*</span>
             <textarea
               rows="10"
               columns="50"
@@ -55,8 +54,7 @@ const Contact = () => {
             onClick={(e) => {
               e.preventDefault();
             }}
-            //className={contactStyles.send}
-            className="p-3 mt-2 rounded-full bg-zinc-300 text-zinc-900 font-bold box-border transition-all ease-in-out duration-200 hover:scale-[1.15] hover:bg-transparent hover:text-zinc-300 border-4 border-transparent hover:border-zinc-300"
+            className="p-3 mt-2 rounded-full bg-[#7AA2F7] text-zinc-900 font-bold box-border transition-all ease-in-out duration-200 hover:scale-[1.15] hover:bg-transparent hover:text-[#7AA2F7] border-4 border-transparent hover:border-[#7AA2F7]"
           >
             Send Message
           </button>
