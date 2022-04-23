@@ -3,7 +3,6 @@ import Avatar from "../public/images/avatar.png";
 import Image from "next/image";
 
 const About = () => {
-
   return (
     <div
       id="about"
