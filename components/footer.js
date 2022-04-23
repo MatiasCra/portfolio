@@ -26,7 +26,12 @@ const Footer = () => {
         >
           <Github className="fill-zinc-300" />
         </a>
-        <a href="mailto: cravchikm@gmail.com" className="mx-[2%]">
+        <a
+          href="mailto: cravchikm@gmail.com"
+          rel="noreferrer"
+          target="_blank"
+          className="mx-[2%]"
+        >
           <Mail className="fill-zinc-300" />
         </a>
       </div>
