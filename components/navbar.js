@@ -22,9 +22,19 @@ const Navbar = () => {
   //   }
   // };
 
+  const toggleSideLinks = (e) => {
+    const links = document.getElementById("navLinks");
+    links.classList.toggle("-right-full");
+    links.classList.toggle("right-0");
+  };
+
   const scrollTo = (elementId) => {
-    document.getElementById(elementId).scrollIntoView({ behavior: "smooth" });
-    window.history.pushState({}, "", "#" + elementId);
+    // Add navbar height to scroll location
+    const scrollLoc =
+      document.getElementById(elementId).offsetTop -
+      document.getElementById("navbar").offsetHeight;
+    window.scrollTo({ top: scrollLoc, behavior: "smooth" });
+    //window.history.pushState({}, "", "#" + elementId);
     // document.getElementById("navbar").classList.remove(navbarStyles.showNav);
   };
 
@@ -41,32 +51,35 @@ const Navbar = () => {
     >
       <div className="">
         <button
-          className="border-none bg-transparent text-4xl font-bold uppercase font-sans tracking-wider"
+          className="border-none bg-transparent text-3xl sm:text-4xl font-bold uppercase font-sans tracking-wider"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
-            closeSideLinks();
+            //closeSideLinks();
           }}
         >
           Matias Cravchik
         </button>
       </div>
       <ul
-        className="list-none flex flex-row m-0 p-0 text-xlg font-sans uppercase"
+        className="list-none text-xlg font-sans uppercase absolute -right-full transition-all
+                   duration-[400ms] ease-in-out h-screen top-0 p-12 flex justify-center flex-col
+                   w-full sm:w-1/2 bg-neutral-900 bg-opacity-90 backdrop-blur-sm
+                   lg:static lg:flex lg:flex-row lg:m-0 lg:p-0 lg:h-auto lg:w-auto lg:bg-transparent"
         id="navLinks"
       >
-        {/* <button
-          className=""
-          // onClick={toggleSideLinks}
+        <button
+          className="absolute top-6 right-10 fill-zinc-300 lg:hidden"
+          onClick={toggleSideLinks}
         >
-          <Close />
-        </button> */}
+          <Close className="h-10 w-10" />
+        </button>
         <NavLink
           href="/"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
-            closeSideLinks();
+            toggleSideLinks();
           }}
         >
           About
@@ -75,7 +88,7 @@ const Navbar = () => {
           href="#projects"
           onClick={(e) => {
             e.preventDefault();
-            // toggleSideLinks();
+            toggleSideLinks();
             scrollTo("projects");
           }}
         >
@@ -85,20 +98,16 @@ const Navbar = () => {
           href="#start"
           onClick={(e) => {
             e.preventDefault();
-            // toggleSideLinks();
+            toggleSideLinks();
             scrollTo("contact");
           }}
         >
           Contact
         </NavLink>
       </ul>
-      {/* <button
-        className=""
-        // onClick={toggleSideLinks}
-        id="hamburgerBtn"
-      >
-        <Hamburger />
-      </button> */}
+      <button className="lg:hidden" onClick={toggleSideLinks} id="hamburgerBtn">
+        <Hamburger className="fill-zinc-300" />
+      </button>
     </nav>
   );
 };
