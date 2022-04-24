@@ -2,7 +2,6 @@ import React from "react";
 import NavLink from "./navlink";
 import Hamburger from "../public/images/Hamburger_icon.svg";
 import Close from "../public/images/close.svg";
-// import { navigate } from "gatsby";
 
 const Navbar = () => {
   // const toggleSideLinks = (e) => {
@@ -21,6 +20,14 @@ const Navbar = () => {
   //       .classList.remove(navbarStyles.moveRight);
   //   }
   // };
+
+  const closeSideLinks = (e) => {
+    const links = document.getElementById("navLinks");
+    if (links.classList.contains("right-0")) {
+      links.classList.toggle("-right-full");
+      links.classList.toggle("right-0");
+    }
+  };
 
   const toggleSideLinks = (e) => {
     const links = document.getElementById("navLinks");
@@ -55,7 +62,7 @@ const Navbar = () => {
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
-            //closeSideLinks();
+            closeSideLinks();
           }}
         >
           Matias Cravchik
@@ -69,7 +76,7 @@ const Navbar = () => {
         id="navLinks"
       >
         <button
-          className="absolute top-6 right-10 fill-zinc-300 lg:hidden"
+          className="absolute top-6 right-10 fill-slate-50 lg:hidden"
           onClick={toggleSideLinks}
         >
           <Close className="h-10 w-10" />
@@ -79,7 +86,7 @@ const Navbar = () => {
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
-            toggleSideLinks();
+            closeSideLinks();
           }}
         >
           About
@@ -88,8 +95,8 @@ const Navbar = () => {
           href="#projects"
           onClick={(e) => {
             e.preventDefault();
-            toggleSideLinks();
             scrollTo("projects");
+            closeSideLinks();
           }}
         >
           Projects
@@ -98,15 +105,15 @@ const Navbar = () => {
           href="#start"
           onClick={(e) => {
             e.preventDefault();
-            toggleSideLinks();
             scrollTo("contact");
+            closeSideLinks();
           }}
         >
           Contact
         </NavLink>
       </ul>
       <button className="lg:hidden" onClick={toggleSideLinks} id="hamburgerBtn">
-        <Hamburger className="fill-zinc-300" />
+        <Hamburger className="fill-slate-50" />
       </button>
     </nav>
   );

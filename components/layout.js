@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "./navbar";
-import navbarStyles from "./navbar.module.css";
 import About from "../components/about";
 import styles from "./layout.module.css";
 import Footer from "../components/footer";
+import { useRouter } from "next/router";
 
 const Layout = (props) => {
   // const [lastScroll, setLastScroll] = React.useState(0);
@@ -11,13 +11,20 @@ const Layout = (props) => {
   // const [navH, setNavH] = React.useState(0);
 
   const [loading, setLoading] = React.useState(true);
+  const router = useRouter();
 
   React.useEffect(() => {
     if (!loading) {
-      window.scrollTo({ top: 0 });
-      console.log("scrolling to top");
+      if (router.asPath === "/") {
+        window.scrollTo({ top: 0 });
+      } else {
+        const scrollAmount =
+          document.getElementById(router.asPath.substring(2)).offsetTop -
+          document.getElementById("navbar").offsetHeight;
+        window.scrollTo({ top: scrollAmount });
+      }
     }
-  }, [loading]);
+  }, [loading, router]);
 
   React.useEffect(() => {
     const nav = document.getElementById("navbar");

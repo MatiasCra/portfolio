@@ -1,40 +1,51 @@
 import React from "react";
 import cardStyles from "./projectCard.module.css";
-import { navigate } from "gatsby";
 
 const ProjectCard = (props) => {
   const openProject = () => {
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    console.log("Going to project", props.slug);
+    // function sleep(ms) {
+    //   return new Promise(resolve => setTimeout(resolve, ms));
+    // }
 
-    const opener = document.getElementById("project-opener")
-    opener.classList.toggle("open-project")
-    document.getElementById("start").classList.toggle("open-project")
-    sleep(750).then(() => {
-      navigate("/project/" + props.slug)
-    })
-  }
+    // const opener = document.getElementById("project-opener")
+    // opener.classList.toggle("open-project")
+    // document.getElementById("start").classList.toggle("open-project")
+    // sleep(750).then(() => {
+    //   navigate("/project/" + props.slug)
+    // })
+  };
 
   const handleKeyPress = (event) => {
-    if(event.key === 'Enter'){
+    if (event.key === "Enter") {
       openProject();
     }
-  }
+  };
 
   return (
-    <div
-      id={props.id}
-      className={cardStyles.card}
-      style={{ "backgroundImage": `url(${props.image})` }}
-      onClick={openProject}
-      role="button"
-      tabIndex="0"
-      onKeyPress={handleKeyPress}
-    >
-        <div className={cardStyles.overlay}>
-          <h3 className={cardStyles.title}>{props.title}</h3>
+    <div className="relative">
+      <div
+        className="bg-center
+                bg-gradient-to-r from-[#7AA2F7] to-indigo-500
+                 bg-no-repeat absolute top-0 w-full h-full rounded-sm"
+      ></div>
+      <div
+        id={props.id}
+        className="bg-center bg-[url('/images/projects/django-blog/DjangoBlog.png')] bg-no-repeat
+                   bg-contain relative"
+        onClick={openProject}
+        role="button"
+        tabIndex="0"
+        onKeyPress={handleKeyPress}
+      >
+        <div
+          id="#projectOverlay"
+          className="w-full py-24 transition-all opacity-0 bg-neutral-900 hover:opacity-90"
+          onClick={openProject}
+        >
+          <h3 className="text-center text-6xl">{props.title}</h3>
         </div>
+      </div>
     </div>
   );
 };
