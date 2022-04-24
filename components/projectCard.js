@@ -1,9 +1,11 @@
 import React from "react";
-import cardStyles from "./projectCard.module.css";
+import { useRouter } from "next/router";
 
 const ProjectCard = (props) => {
+  const router = useRouter();
+
   const openProject = () => {
-    console.log("Going to project", props.slug);
+    router.push(`/projects/${props.slug}`);
     // function sleep(ms) {
     //   return new Promise(resolve => setTimeout(resolve, ms));
     // }
