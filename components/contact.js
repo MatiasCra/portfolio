@@ -16,7 +16,7 @@ const Contact = () => {
                 </div>
                 <input
                   type="text"
-                  className="w-full lg:ml-2 lg:w-5/6 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-all ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
+                  className="w-full lg:ml-2 lg:w-5/6 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-shadow ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
                 />
               </label>
             </div>
@@ -27,7 +27,7 @@ const Contact = () => {
                 </div>
                 <input
                   type="email"
-                  className="w-full lg:ml-2 lg:w-5/6 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-all ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
+                  className="w-full lg:ml-2 lg:w-5/6 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-shadow ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
                 />
               </label>
             </div>
@@ -37,7 +37,7 @@ const Contact = () => {
             Subject<span className="ml-1 text-[#E0AF68]">*</span>
             <input
               type="text"
-              className="w-full mt-1 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-all ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
+              className="w-full mt-1 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-shadow ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
             />
           </label>
 
@@ -46,7 +46,7 @@ const Contact = () => {
             <textarea
               rows="10"
               columns="50"
-              className="w-full mt-1 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-all ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
+              className="w-full mt-1 p-2 rounded-md bg-zinc-900 border-2 border-zinc-400 transition-shadow ease-in-out focus-visible:outline-0 duration-300 focus:outline-none focus:shadow-[0_0_0_1px_ghostwhite]"
             ></textarea>
           </label>
 

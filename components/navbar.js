@@ -58,7 +58,9 @@ const Navbar = () => {
     >
       <div className="">
         <button
-          className="border-none bg-transparent text-3xl sm:text-4xl font-bold uppercase font-sans tracking-wider"
+          className="border-none bg-transparent text-3xl sm:text-4xl font-bold uppercase 
+                     font-sans tracking-wider duration-[400] hover:text-transparent
+                     bg-gradient-to-r from-[#F7768E] to-orange-600 bg-clip-text"
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();

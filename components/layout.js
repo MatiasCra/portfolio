@@ -81,7 +81,7 @@ const Layout = (props) => {
 
   return (
     <div
-      className="bg-zinc-900 flex flex-col min-h-screen w-full m-0 text-slate-200 "
+      className="bg-zinc-900 flex flex-col min-h-screen w-full m-0 text-slate-200"
       id="start"
     >
       <div className="m-0 flex-grow min-h-screen">
