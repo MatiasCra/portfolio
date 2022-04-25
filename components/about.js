@@ -6,7 +6,8 @@ const About = () => {
   return (
     <div
       id="about"
-      className={`hidden transition-all mx-auto flex flex-col-reverse lg:flex-row-reverse justify-between items-center w-4/5 lg:mt-0}`}
+      className={`transition-all mx-auto flex flex-col-reverse lg:flex-row-reverse justify-between 
+                  items-center w-4/5 xl:min-h-screen`}
     >
       <div className="flex my-10 items-center text-xl lg:w-1/2 lg:ml-8">
         Occaecat dolore anim culpa qui nisi pariatur ut aliquip sunt aute. Magna

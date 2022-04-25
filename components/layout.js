@@ -10,32 +10,6 @@ const Layout = (props) => {
   // const [showNav, setShowNav] = React.useState(true);
   // const [navH, setNavH] = React.useState(0);
 
-  const [loading, setLoading] = React.useState(true);
-  const router = useRouter();
-
-  React.useEffect(() => {
-    if (!loading) {
-      if (router.asPath === "/") {
-        window.scrollTo({ top: 0 });
-      } else {
-        const scrollAmount =
-          document.getElementById(router.asPath.substring(2)).offsetTop -
-          document.getElementById("navbar").offsetHeight;
-        window.scrollTo({ top: scrollAmount });
-      }
-    }
-  }, [loading, router]);
-
-  React.useEffect(() => {
-    const nav = document.getElementById("navbar");
-    const about = document.getElementById("about");
-    about.style.marginTop = `${nav.offsetHeight}px`;
-    about.classList.remove("hidden");
-    nav.classList.add("fixed");
-    nav.classList.add("top-0");
-    setLoading(false);
-  }, [setLoading]);
-
   // React.useEffect(() => {
   //   function handleScroll(event) {
   //     const scrollAmmount = 250;
@@ -85,7 +59,7 @@ const Layout = (props) => {
       id="start"
     >
       <div className="m-0 flex-grow min-h-screen">
-        <div className={`${styles.animateEntranceFade} relative z-50`}>
+        <div className={`${styles.animateEntranceFade} relative z-50 mb-12 xl:mb-0 mb-24`}>
           <Navbar />
         </div>
         <div

@@ -5,11 +5,14 @@ const ProjectCard = (props) => {
   const router = useRouter();
 
   const openProject = () => {
-    router.push(`/projects/${props.slug}`);
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
-    // function sleep(ms) {
-    //   return new Promise(resolve => setTimeout(resolve, ms));
-    // }
+    document.getElementById("start").classList.add("open-project");
+    sleep(400).then(() => {
+      router.push(`/projects/${props.slug}`);
+    });
 
     // const opener = document.getElementById("project-opener")
     // opener.classList.toggle("open-project")

@@ -52,7 +52,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flex flex-row justify-between items-center mx-auto my-0 py-6 w-full px-[10%] bg-zinc-900 z-50"
+      className="flex flex-row justify-between items-center mx-auto my-0 py-6 w-full 
+                 px-[10%] bg-zinc-900 z-50 fixed top-0"
       // className={navbarStyles.navbar + " " + navbarStyles.showNav}
       id="navbar"
     >
