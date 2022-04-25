@@ -33,10 +33,7 @@ const Projects = ({ projects }) => {
   // });
 
   return (
-    <div
-      className="w-full flex flex-col bg-transparent"
-      id="projects"
-    >
+    <div className="w-full flex flex-col bg-transparent" id="projects">
       <h2 className="uppercase text-6xl w-full text-center font-mono">
         Projects
       </h2>
@@ -50,8 +47,8 @@ const Projects = ({ projects }) => {
               key={i}
               id={project.order}
               title={project.title}
-              //image={image}
               slug={project.slug}
+              banner={project.banner}
             />
           );
         })}

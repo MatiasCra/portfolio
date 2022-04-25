@@ -6,6 +6,7 @@ const ProjectCard = (props) => {
 
   const openProject = () => {
     router.push(`/projects/${props.slug}`);
+
     // function sleep(ms) {
     //   return new Promise(resolve => setTimeout(resolve, ms));
     // }
@@ -27,14 +28,13 @@ const ProjectCard = (props) => {
   return (
     <div className="relative">
       <div
-        className="bg-center
-                bg-gradient-to-r from-[#7AA2F7] to-indigo-500
-                 bg-no-repeat absolute top-0 w-full h-full rounded-sm"
+        className="bg-center bg-gradient-to-r from-[#7AA2F7] to-indigo-500
+                   bg-no-repeat absolute top-0 w-full h-full rounded-sm"
       ></div>
       <div
         id={props.id}
-        className="bg-center bg-[url('/images/projects/django-blog/DjangoBlog.png')] bg-no-repeat
-                   bg-contain relative"
+        style={{ backgroundImage: `url('${props.banner}')` }}
+        className={`bg-center bg-no-repeat bg-contain relative`}
         onClick={openProject}
         role="button"
         tabIndex="0"
