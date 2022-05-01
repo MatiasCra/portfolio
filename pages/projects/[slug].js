@@ -3,6 +3,7 @@ import Close from "../../public/images/close.svg";
 import {useRouter} from "next/router";
 import styles from "../../components/layout.module.css";
 import Slider from "../../components/slider";
+import Image from "next/image";
 
 export async function getStaticPaths() {
     const paths = getProjectsSlugs();
@@ -49,7 +50,13 @@ export default function Project({projectData}) {
             <h1 className="text-center text-4xl sm:text-5xl md:text-6xl uppercase text-slate-50">
                 {projectData.title}
             </h1>
-            <Slider className="mx-2 mt-4 sm:mt-6 md:mx-8 lg:mx-[13%] lg:mt-8" />
+            <Slider className="mx-2 mt-4 sm:mt-6 md:mx-8 lg:mx-[13%] lg:mt-8">
+                {projectData.images.map((image, index) => {
+                    return(
+                        <img src={image} alt={`screenshot${index}`} key={index} />
+                    )
+                })}
+            </Slider>
         </div>
     );
 }

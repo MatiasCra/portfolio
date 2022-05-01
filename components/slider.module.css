@@ -1,9 +1,9 @@
 @keyframes slidy {
     0% {
-        left: 0%;
+        left: 0;
     }
     20% {
-        left: 0%;
+        left: 0;
     }
     25% {
         left: -100%;
@@ -24,7 +24,7 @@
         left: -300%;
     }
     0% {
-        left: 0%;
+        left: 0;
     }
 }
 
@@ -47,4 +47,22 @@
     text-align: left;
     font-size: 0;
     animation: 30s slidy infinite;
+}
+
+.appear {
+    animation: 1s fade ease;
+}
+
+@keyframes fade {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    50% {
+        display: flex;
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 0;
+    }
 }
