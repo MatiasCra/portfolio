@@ -1,4 +1,30 @@
 {
   "order": 2,
-  "title": "Bitfunder"
+  "title": "Bitfunder",
+  "techs": [
+    {
+      "name": "react",
+      "description": "Created with create-react-app"
+    },
+    {
+      "name": "redux",
+      "description": "Used Redux to have a global state though all React components"
+    },
+    {
+      "name": "redux-saga",
+      "description": "Managed async updates to the state like api calls with sagas"
+    },
+    {
+      "name": "material-ui",
+      "description": "Library of React components following Google's Material Design"
+    },
+    {
+      "name": "django",
+      "description": "Made a backend with Python Django with an admin page and HTTP apis"
+    },
+    {
+      "name": "drf",
+      "description": "Created RESTful apis using the Django Rest Framework and Json web tokens"
+    }
+  ]
 }

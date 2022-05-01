@@ -4,7 +4,6 @@ import Arrow from "../public/images/arrow.svg";
 import Circle from "../public/images/circle.svg";
 
 const Slider = ({className, children}) => {
-    // const [loading, setLoading] = React.useState(true);
     const [current, setCurrent] = React.useState(0);
 
     const inTransition = () => {
@@ -13,16 +12,6 @@ const Slider = ({className, children}) => {
         const imageWidth = figure.offsetWidth / 4 * 0.8;
         return !((Math.abs(currentLeft) + 1) % imageWidth < 2);
     }
-
-    // React.useEffect(() => {
-    //     if (loading) {
-    //         setLoading(false);
-    //     } else {
-    //         Array.from(document.getElementsByClassName("hidden")).forEach(element => {
-    //             element.classList.remove("hidden");
-    //         })
-    //     }
-    // }, [loading, setLoading]);
 
     React.useEffect(() => {
         const figure = document.getElementById("sliderFigure");
@@ -44,8 +33,7 @@ const Slider = ({className, children}) => {
             targetLeft = -3 * imageWidth;
         }
 
-        console.log("Going to image:", current)
-        if (!runningAnimation && targetLeft !== currentLeft /*&& notInTransition*/) {
+        if (!runningAnimation && targetLeft !== currentLeft) {
             figure.animate(
                 [
                     {
@@ -112,11 +100,11 @@ const Slider = ({className, children}) => {
                          id="indicators"
                     >
                         {[...Array(4).keys()].map((i) => {
-                            if (current === i) {
-                                return <Circle className="fill-zinc-300 stroke-zinc-200 w-6 mx-1"/>;
-                            }
+                            if (current === i)
+                                return <Circle className="fill-zinc-300 stroke-zinc-200 w-6 mx-1" key={i}/>;
+
                             return <Circle className="fill-transparent stroke-zinc-200 w-6 mx-1 hover:cursor-pointer"
-                                           onClick={() => goToImage(i)}/>;
+                                           onClick={() => goToImage(i)} key={i}/>;
                         })}
                     </div>
                 </div>

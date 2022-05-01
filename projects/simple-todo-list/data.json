@@ -1,4 +1,14 @@
 {
   "order": 1,
-  "title": "Simple To-Do List"
+  "title": "Simple To-Do List",
+  "techs": [
+    {
+      "name": "react",
+      "description": "Created with create-react-app"
+    },
+    {
+      "name": "hooks",
+      "description": "Used React's useContext hook to save data into localstorage, making it persistent on the browser"
+    }
+  ]
 }

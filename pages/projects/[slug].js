@@ -36,6 +36,10 @@ export default function Project({projectData}) {
         });
     };
 
+    const techLoader = ({src}) => {
+        return `/images/techs/${src}.png`;
+    }
+
     return (
         <div
             id="start"
@@ -43,20 +47,41 @@ export default function Project({projectData}) {
                   text-slate-200 py-5 relative ${styles.animateEntranceUp}`}
         >
             <Close
-                className="absolute right-4 top-4 w-10 h-10 sm:top-5 sm:right-5 sm:w-12 sm:h-12 md:right-6 md:w-14 md:h-14
+                className="absolute top-5 right-5 w-12 h-12 md:right-6 md:w-14 md:h-14 bg-zinc-900
                    fill-slate-50 hover:cursor-pointer hover:fill-[#F7768E] transition-all duration-[400]"
                 onClick={closeProject}
             />
-            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl uppercase text-slate-50">
+            <h1 className="text-center max-w-[60%] sm:max-w-[70%] md:max-w-[85%] mx-auto text-5xl md:text-6xl
+                           uppercase text-slate-50">
                 {projectData.title}
             </h1>
             <Slider className="mx-2 mt-4 sm:mt-6 md:mx-8 lg:mx-[13%] lg:mt-8">
                 {projectData.images.map((image, index) => {
-                    return(
-                        <img src={image} alt={`screenshot${index}`} key={index} />
+                    return (
+                        <img src={image} alt={`screenshot${index}`} key={index}/>
                     )
                 })}
             </Slider>
+            <div className="mx-2 md:mx-8 lg:mx-[13%]">
+                <h2 className="text-4xl md:text-5xl text-center uppercase my-10">Technologies</h2>
+                {projectData.techs.map(({name, description}, i) => {
+                    return (
+                        <div className="grid grid-cols-10 p-3 items-center place-items-start auto-cols-fr" key={i}>
+                            <div className="col-start-1 col-span-2 lg:col-span-1">
+                                <Image src={name}
+                                       width={120} height={120}
+                                       className="aspect-square"
+                                       loader={techLoader}
+                                />
+                            </div>
+                            <div className="ml-6 col-start-3 col-span-8 lg:col-start-2 lg:col-span-10">
+                                <span className="text-4xl capitalize">{name}</span>
+                                <span className="text-xl">: {description}</span>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }
