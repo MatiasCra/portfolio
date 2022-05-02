@@ -1,58 +1,59 @@
 import React from "react";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
+import styles from "./projectCard.module.css";
 
 const ProjectCard = (props) => {
-  const router = useRouter();
+    const router = useRouter();
 
-  const openProject = () => {
-    function sleep(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-    }
+    const openProject = () => {
+        function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
 
-    document.getElementById("start").classList.add("open-project");
-    sleep(400).then(() => {
-      router.push(`/projects/${props.slug}`);
-    });
+        document.getElementById("start").classList.add("open-project");
+        sleep(400).then(() => {
+            router.push(`/projects/${props.slug}`);
+        });
 
-    // const opener = document.getElementById("project-opener")
-    // opener.classList.toggle("open-project")
-    // document.getElementById("start").classList.toggle("open-project")
-    // sleep(750).then(() => {
-    //   navigate("/project/" + props.slug)
-    // })
-  };
+        // const opener = document.getElementById("project-opener")
+        // opener.classList.toggle("open-project")
+        // document.getElementById("start").classList.toggle("open-project")
+        // sleep(750).then(() => {
+        //   navigate("/project/" + props.slug)
+        // })
+    };
 
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      openProject();
-    }
-  };
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            openProject();
+        }
+    };
 
-  return (
-    <div className="relative">
-      <div
-        className="bg-center bg-gradient-to-r from-[#7AA2F7] to-indigo-500
+    return (
+        <div className="relative">
+            <div
+                className="bg-center bg-gradient-to-r from-[#7AA2F7] to-indigo-500
                    bg-no-repeat absolute top-0 w-full h-full rounded-sm"
-      ></div>
-      <div
-        id={props.id}
-        style={{ backgroundImage: `url('${props.banner}')` }}
-        className={`bg-center bg-no-repeat bg-contain relative`}
-        onClick={openProject}
-        role="button"
-        tabIndex="0"
-        onKeyPress={handleKeyPress}
-      >
-        <div
-          id="#projectOverlay"
-          className="w-full py-24 transition-all opacity-0 bg-neutral-900 hover:opacity-90"
-          onClick={openProject}
-        >
-          <h3 className="text-center text-6xl">{props.title}</h3>
+            ></div>
+            <div
+                id={props.id}
+                style={{backgroundImage: `url('${props.banner}')`}}
+                className={`bg-center bg-no-repeat bg-contain relative`}
+                onClick={openProject}
+                role="button"
+                tabIndex="0"
+                onKeyPress={handleKeyPress}
+            >
+                <div
+                    id="#projectOverlay"
+                    className={`w-full py-24 transition-all opacity-0 bg-neutral-900 hover:opacity-90 ${styles.overlay}`}
+                    onClick={openProject}
+                >
+                    <h3 className="text-center text-6xl">{props.title}</h3>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ProjectCard;

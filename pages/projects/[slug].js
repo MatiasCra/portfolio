@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import styles from "../../components/layout.module.css";
 import Slider from "../../components/slider";
 import Image from "next/image";
+import Footer from "../../components/footer";
 
 export async function getStaticPaths() {
     const paths = getProjectsSlugs();
@@ -82,6 +83,26 @@ export default function Project({projectData}) {
                     );
                 })}
             </div>
+            <div className="mx-2 md:mx-8 lg:mx-[13%] mb-12">
+                {projectData.demo ?
+                    <h2 className="text-4xl md:text-5xl text-center uppercase my-10">Demo</h2>
+                    : ""}
+                {projectData.demo?.map(({name, description, link}, i) => {
+                    return (
+                        <div key={i}>
+                            <span className="text-4xl capitalize">{name}</span>
+                            <span className="text-xl">: {description} </span>
+                            <a target="_blank" href={link}
+                               className="text-xl text-[#7AA2F7] hover:bg-gradient-to-r hover:from-[#F7768E]
+                                          hover:to-orange-600 hover:bg-clip-text hover:text-transparent"
+                            >
+                                {link}
+                            </a>
+                        </div>
+                    )
+                })}
+            </div>
+            <Footer />
         </div>
     );
 }

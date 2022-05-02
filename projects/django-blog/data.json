@@ -1,5 +1,14 @@
 {
   "order": 4,
   "title": "Django Blog",
-  "techs": []
+  "techs": [
+    {
+      "name": "django",
+      "description": "Made with Python's Django fullstack framework (and some JavaScript), including an admin page and authentication"
+    },
+    {
+      "name": "bootstrap",
+      "description": "Created the UI with the Bootstrap CSS framework"
+    }
+  ]
 }

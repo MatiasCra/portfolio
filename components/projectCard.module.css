@@ -1,59 +1,12 @@
-.card {
-  background-color: black;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  height: max-content;
-  transition: transform 1s ease;
-  background-position: center;
-}
-
-.card:hover {
-  cursor: pointer;
-}
-
 .overlay {
-  width: 100%;
-  padding: 6rem 0;
-  opacity: 0;
-  transition: opacity 250ms ease, background-color 250ms ease, width 1s ease, height 1s ease;
+  animation: appear ease 0s;
 }
 
-@media (max-width: 576px) {
-  .card {
-    background-size: 100% 100%;
+@keyframes appear {
+  0% {
+    opacity: 0;
   }
-  .overlay {
-    padding: 4rem 0;
+  100% {
+    opacity: 0;
   }
 }
-
-.card:hover .overlay {
-  background-color: rgba(0, 0, 0, .9);
-}
-
-.card:hover .overlay {
-  opacity: 1;
-}
-
-.title {
-  opacity: 0;
-  visibility: hidden;
-  color: var(--color-cyan);
-  text-shadow: 1px 1px 15px black;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 3rem;
-  transition: opacity 250ms ease, visibility 250ms ease;
-}
-
-.card:hover .title {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* @media (max-width: 992px) {
-  .card {
-    background-size: 100%;
-  }
-} */

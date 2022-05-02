@@ -1,5 +1,33 @@
 {
   "order": 3,
   "title": "Gatsby Blog",
-  "techs": []
+  "techs": [
+    {
+      "name": "react",
+      "description": "Created with Facebook's JavaScript library"
+    },
+    {
+      "name": "gatsby",
+      "description": "A React framework excellent for building fast static websites"
+    },
+    {
+      "name": "graphql",
+      "description": "A query language for APIs integrated with Gatsby"
+    },
+    {
+      "name": "contentful",
+      "description": "Full CMS that provides APIs with an initially free (and easy to scale) account"
+    },
+    {
+      "name": "netlify",
+      "description": "Deployed this site using Netlify's hosting service"
+    }
+  ],
+  "demo": [
+    {
+      "name": "hosting",
+      "description": "Currently hosted at",
+      "link": "https://zen-kirch-8328d6.netlify.app/"
+    }
+  ]
 }
