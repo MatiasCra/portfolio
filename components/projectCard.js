@@ -3,29 +3,10 @@ import {useRouter} from "next/router";
 import styles from "./projectCard.module.css";
 
 const ProjectCard = (props) => {
-    const router = useRouter();
 
-    const openProject = () => {
-        function sleep(ms) {
-            return new Promise((resolve) => setTimeout(resolve, ms));
-        }
-
-        document.getElementById("start").classList.add("open-project");
-        sleep(400).then(() => {
-            router.push(`/projects/${props.slug}`);
-        });
-
-        // const opener = document.getElementById("project-opener")
-        // opener.classList.toggle("open-project")
-        // document.getElementById("start").classList.toggle("open-project")
-        // sleep(750).then(() => {
-        //   navigate("/project/" + props.slug)
-        // })
-    };
-
-    const handleKeyPress = (event) => {
+    const handleKeyPress = (event, slug) => {
         if (event.key === "Enter") {
-            openProject();
+            props.openProject(slug);
         }
     };
 
@@ -39,15 +20,15 @@ const ProjectCard = (props) => {
                 id={props.id}
                 style={{backgroundImage: `url('${props.banner}')`}}
                 className={`bg-center bg-no-repeat bg-contain relative`}
-                onClick={openProject}
+                onClick={() => props.openProject(props.slug)}
                 role="button"
                 tabIndex="0"
-                onKeyPress={handleKeyPress}
+                onKeyPress={e => handleKeyPress(e, props.slug)}
             >
                 <div
                     id="#projectOverlay"
                     className={`w-full py-24 transition-all opacity-0 bg-neutral-900 hover:opacity-90 ${styles.overlay}`}
-                    onClick={openProject}
+                    onClick={() => props.openProject(props.slug)}
                 >
                     <h3 className="text-center text-6xl">{props.title}</h3>
                 </div>
