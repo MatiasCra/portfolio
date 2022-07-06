@@ -3,30 +3,39 @@ import React from 'react'
 const Contact = () => {
   const sendMail = async (e) => {
     e.preventDefault()
-    const data = [
-      { name: document.getElementById('nameInput').value },
-      { email: document.getElementById('emailInput').value },
-      { subject: document.getElementById('subjectInput').value },
-      { message: document.getElementById('messageInput').value },
+    const fields = [
+      { name: document.getElementById('nameInput') },
+      { email: document.getElementById('emailInput') },
+      { subject: document.getElementById('subjectInput') },
+      { message: document.getElementById('messageInput') },
     ]
 
     const formData = {}
-    data.forEach((field) => {
+    fields.forEach((field) => {
       const name = Object.keys(field)[0]
-      const value = Object.values(field)[0]
+      const value = Object.values(field)[0].value
       if (!value) {
         return
       }
       formData[name] = value
     })
 
-    if (Object.keys(formData).length < data.length) return
+    if (Object.keys(formData).length < fields.length) return
 
     const res = await fetch('http://localhost:3000/api/send-mail', {
-        method: 'POST',
-        body: JSON.stringify(formData)
-      }
-    )
+      method: 'POST',
+      body: JSON.stringify(formData),
+    })
+
+    if (res.status == 200) {
+      fields.forEach((field) => {
+        const input = Object.values(field)[0]
+        input.value = ''
+      })
+      // Object.values(fields[0])[0].focus() // Focus on name input (?)
+
+      // TODO: success message
+    }
   }
 
   return (
