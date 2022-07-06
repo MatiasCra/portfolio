@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = () => {
+const Contact = ({ openSnackbar }) => {
   const sendMail = async (e) => {
     e.preventDefault()
     const fields = [
@@ -35,6 +35,7 @@ const Contact = () => {
       // Object.values(fields[0])[0].focus() // Focus on name input (?)
 
       // TODO: success message
+      openSnackbar()
     }
   }
 
