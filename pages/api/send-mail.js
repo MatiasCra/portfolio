@@ -4,8 +4,8 @@ export default async function handle(req, res) {
 
   const body = JSON.parse(req.body)
   const msg = {
-    to: 'cravchikm@gmail.com', // Change to your recipient
-    from: 'cravchikm@gmail.com', // Change to your verified sender
+    to: 'cravchikm@gmail.com',
+    from: 'cravchikm@gmail.com',
     subject: body.subject,
     text: `Message from ${body.name} on portfolio\n${body.message}`,
     html: `Message from ${body.name} on portfolio<br/>${body.message}`,
