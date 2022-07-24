@@ -40,12 +40,13 @@ const IndexPage = ({ allProjectsData }) => {
   }
 
   const closeSnackbar = () => {
-    setOpened(false)
+    if (opened)
+      setOpened(false)
   }
 
   React.useEffect(() => {
     console.log(message)
-    if (message) setOpened(true)
+    if (message && !opened) setOpened(true)
   }, [message])
 
   return (

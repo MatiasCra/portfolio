@@ -8,8 +8,6 @@ const SnackBar = (props) => {
 
     const snackbar = document.getElementById("snackbar");
     if (props.opened) {
-      props.close();
-
       snackbar.classList.remove("hidden");
       snackbar.animate(
         [
@@ -56,6 +54,9 @@ const SnackBar = (props) => {
       sleep(2600).then(() => {
         snackbar.classList.add("hidden");
       });
+
+      props.close();
+
     }
   }, [props]);
 
