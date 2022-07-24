@@ -11,12 +11,13 @@ datasource db {
 }
 
 model Project {
-  id    Int    @id @default(autoincrement())
-  slug  String @unique
-  order Int    @default(1)
-  title String @unique
-  techs Tech[]
-  demo  Demo?
+  id     Int    @id @default(autoincrement())
+  slug   String @unique
+  order  Int    @default(1)
+  title  String @unique
+  techs  Tech[]
+  demo   Demo?
+  source String @default("")
 }
 
 model Tech {

@@ -26,7 +26,7 @@ const SnackBar = (props) => {
         ],
         {
           fill: "forwards",
-          duration: 300,
+          duration: 600,
           easing: "ease",
         }
       );
@@ -64,7 +64,7 @@ const SnackBar = (props) => {
       id="snackbar"
       className="sticky bottom-16 right-1/2 flex flex-col items-center transition-all opacity-0 hidden"
     >
-      <div className="bg-emerald-300 w-96 h-16 justify-center items-center flex rounded-lg">
+      <div className={`${props.color} w-96 h-16 justify-center items-center flex rounded-lg`}>
         <span className="text-xl text-zinc-900">{props.message}</span>
       </div>
     </div>

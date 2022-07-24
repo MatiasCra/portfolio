@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Contact = ({ openSnackbar }) => {
+const Contact = (props) => {
   const sendMail = async (e) => {
     e.preventDefault()
     const fields = [
@@ -15,6 +15,7 @@ const Contact = ({ openSnackbar }) => {
       const name = Object.keys(field)[0]
       const value = Object.values(field)[0].value
       if (!value) {
+        props.openSnackbar(props.snackBarErrors.MISSING_FIELDS)
         return
       }
       formData[name] = value
@@ -34,8 +35,9 @@ const Contact = ({ openSnackbar }) => {
       })
       // Object.values(fields[0])[0].focus() // Focus on name input (?)
 
-      // TODO: success message
-      openSnackbar()
+      props.openSnackbar(props.snackBarErrors.NO)
+    } else {
+      props.openSnackbar(props.snackBarErrors.SERVER_ERROR)
     }
   }
 

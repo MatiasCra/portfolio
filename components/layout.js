@@ -29,8 +29,9 @@ const Layout = (props) => {
       </div>
       <SnackBar
         opened={props.openedSnackbar}
-        close={() => props.setOpenedSnackbar(false)}
+        close={props.closeSnackbar}
         message={props.snackBarMessage}
+        color={props.snackBarColor}
       />
     </div>
   );

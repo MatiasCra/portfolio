@@ -19,6 +19,6 @@ export default async function handle(req, res) {
     })
     .catch((error) => {
       console.error(JSON.stringify(error, 2))
+      res.status(500).json({ status: 'Error' })
     })
-  res.status(200).json({ status: 'Ok' })
 }
